@@ -4,22 +4,22 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>My Counter</title>
   </head>
   <body>
+    <div id="bg"></div>
     <div id="container">
-      <img
-        id="img"
-        src="https://images.unsplash.com/photo-1430990480609-2bf7c02a6b1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-        alt=""
-      />
+      <header>SHOW THE BIRD!</header>
       <div class="counter-container">
         <button id="less">-</button>
         <span id="counter-value"></span>
         <button id="plus">+</button>
       </div>
-      <progress value="44" max="100" class="progressbar"></progress>
+      <progress value="0" max="100"></progress>
     </div>
     <script src="./js/main.js"></script>
   </body>
