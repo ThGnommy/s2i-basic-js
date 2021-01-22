@@ -6,6 +6,7 @@ const progressBar = document.querySelector("progress");
 
 let value = 0;
 let imgSrc;
+const defaultImg = "../default-image.jpg";
 let imgBlur = 100;
 let interval;
 counterValue.innerHTML = value + "%";
@@ -18,7 +19,6 @@ const plusOne = () => {
       counterValue.innerHTML = value + "%";
       img.style.filter = `blur(${imgBlur - value}px)`;
       progressBar.value = value;
-      console.log(imgBlur - value);
     }
   }, 25);
 };
@@ -67,6 +67,10 @@ const getRandomImage = async () => {
     .then((data) => {
       imgSrc = data.urls.regular;
       img.style.background = `url("${imgSrc}")`;
+    })
+    .catch((error) => {
+      img.style.background = `url("${defaultImg}")`;
+      throw new Error(error);
     });
 };
 
