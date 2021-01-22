@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiko&display=swap");
 
+:root {
+  --main-color: tomato;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +39,7 @@ header {
   font-size: 50px;
   font-style: italic;
   margin-top: 30px;
-  color: tomato;
+  color: var(--main-color);
 }
 
 button {
@@ -52,12 +56,12 @@ button {
   width: 50%;
   height: 200px;
   background-color: rgba(255, 177, 163, 0.2);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #counter-value {
   font-size: 50px;
-  color: tomato;
+  color: var(--main-color);
 }
 
 progress {
@@ -73,12 +77,12 @@ progress[value]::-webkit-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-  background-color: tomato;
+  background-color: var(--main-color);
 }
 
 button {
   font-size: xx-large;
-  background-color: tomato;
+  background-color: var(--main-color);
   border: 0;
   width: 4rem;
   height: 3rem;
