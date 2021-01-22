@@ -43,6 +43,22 @@ header {
   color: var(--main-color);
 }
 
+.fa-sync {
+  color: var(--main-color);
+  cursor: pointer;
+  margin: 30px;
+  font-size: 3rem !important;
+}
+
+@keyframes icon-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .counter-container {
   position: absolute;
   bottom: 80px;
@@ -94,6 +110,11 @@ button:focus {
 @media screen and (max-width: 1024px) {
   header {
     font-size: 35px;
+  }
+
+  .fa-sync {
+    font-size: 2rem !important;
+    margin: 10px;
   }
 
   button {

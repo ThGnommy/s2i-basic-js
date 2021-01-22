@@ -1,4 +1,11 @@
-import { counterValue, plus, less, img, progressBar } from "./selectors";
+import {
+  counterValue,
+  plus,
+  less,
+  img,
+  progressBar,
+  reloadIcon,
+} from "./selectors";
 import { getRandomImage } from "./fetch";
 
 let value = 0;
@@ -29,6 +36,19 @@ const lessOne = () => {
   }, 25);
 };
 
+const reloadAnimation = () => {
+  reloadIcon.style.animation = "icon-anim 1s ease-in-out 0.2s";
+};
+
+const resetImg = () => {
+  value = 0;
+  imgBlur = 100;
+  reloadIcon.style.removeProperty("animation");
+  counterValue.innerHTML = 0 + "%";
+  img.style.filter = `blur(100px)`;
+  getRandomImage();
+};
+
 plus.addEventListener("mousedown", () => plusOne());
 plus.addEventListener("mouseup", () => clearInterval(interval));
 plus.addEventListener("mouseleave", () => clearInterval(interval));
@@ -43,30 +63,7 @@ less.addEventListener("mouseleave", () => clearInterval(interval));
 less.addEventListener("touchstart", () => lessOne());
 less.addEventListener("touchend", () => clearInterval(interval));
 
-// const getRandomImage = async () => {
-//   await fetch(
-//     "https://api.unsplash.com/photos/random/?" +
-//       new URLSearchParams({
-//         featured: true,
-//         collections: "2292047, 3822610",
-//       }),
-//     {
-//       headers: {
-//         Authorization: `Client-ID ${process.env.API_KEY}`,
-//       },
-//     }
-//   )
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((data) => {
-//       imgSrc = data.urls.regular;
-//       img.style.background = `url("${imgSrc}")`;
-//     })
-//     .catch((error) => {
-//       img.style.background = `url("${defaultImg}")`;
-//       throw new Error(error);
-//     });
-// };
+reloadIcon.addEventListener("click", () => reloadAnimation());
+reloadIcon.addEventListener("animationend", () => resetImg());
 
 getRandomImage();
