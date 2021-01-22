@@ -57,7 +57,7 @@ const getRandomImage = async () => {
       }),
     {
       headers: {
-        Authorization: "Client-ID Im2uZnSqdOdUJ6xaEuIfN-Ha5IDnUyobnntywEcqeR4",
+        Authorization: `Client-ID ${process.env.API_KEY}`,
       },
     }
   )
