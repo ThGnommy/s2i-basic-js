@@ -46,6 +46,7 @@ const resetImg = () => {
   reloadIcon.style.removeProperty("animation");
   counterValue.innerHTML = 0 + "%";
   img.style.filter = `blur(100px)`;
+  progressBar.value = 0;
   getRandomImage();
 };
 
