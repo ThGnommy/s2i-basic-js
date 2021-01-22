@@ -13,6 +13,7 @@
 body {
   font-family: "Amiko", sans-serif;
   overflow: hidden;
+  background-color: rgba(255, 177, 163, 0.2);
 }
 
 #container {
@@ -24,15 +25,17 @@ body {
 
 #bg {
   position: absolute;
-  height: calc(100vh + 60px);
-  width: calc(100vw + 60px);
-  top: -30px;
-  left: -30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 50vw;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  z-index: -1;
-  overflow: hidden;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -42,11 +45,6 @@ header {
   color: var(--main-color);
 }
 
-button {
-  height: 2rem;
-  width: 2rem;
-}
-
 .counter-container {
   position: absolute;
   bottom: 80px;
@@ -54,8 +52,6 @@ button {
   justify-content: space-evenly;
   align-items: center;
   width: 50%;
-  height: 200px;
-  background-color: rgba(255, 177, 163, 0.2);
   border-radius: 10px;
 }
 
@@ -84,8 +80,8 @@ button {
   font-size: xx-large;
   background-color: var(--main-color);
   border: 0;
-  width: 4rem;
-  height: 3rem;
+  width: 5rem;
+  height: 4rem;
   border-radius: 5px;
   color: #fff;
   -webkit-box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.5);
@@ -102,8 +98,18 @@ button:focus {
     font-size: 35px;
   }
 
+  button {
+    width: 4rem;
+    height: 3rem;
+  }
+
+  #bg {
+    width: 90vw;
+  }
+
   .counter-container {
     width: 80%;
+    bottom: 30px;
   }
 
   button {
